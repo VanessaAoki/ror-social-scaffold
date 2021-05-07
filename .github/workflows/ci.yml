@@ -6,6 +6,8 @@ jobs:
     services:
       db:
         image: postgres:11
+        env:
+          MYSQL_ROOT_PASSWORD: password
         ports: ['5432:5432']
         options: >-
           --health-cmd pg_isready
