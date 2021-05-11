@@ -27,4 +27,5 @@ module ApplicationHelper
     else
       link_to 'Add Friend', friendships_path(id: user.id), class: 'friendship_btn', method: :post, remote: true
     end
+  end
 end
