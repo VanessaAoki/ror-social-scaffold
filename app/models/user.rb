@@ -14,7 +14,6 @@ class User < ApplicationRecord
   has_many :friendships, -> { where(status: 'confirmed') }
   has_many :friends, through: :friendships
 
-  
   has_many :friend_requests_sent, -> { where(status: 'pending') },
            class_name: 'Friendship', foreign_key: 'user_id'
   has_many :friend_requests_received, -> { where(status: 'pending') },
