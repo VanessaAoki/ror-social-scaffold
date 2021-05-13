@@ -24,7 +24,7 @@ module FriendshipHelper
                           ),
                 method: :post, class: 'btn btn-success')}
       #{link_to('Reject', reject_user_path(Friendship.where(user: the_other_user,
-                                                                  friend: current_user).first),
+                                                            friend: current_user).first),
                 method: :post, class: 'btn btn-danger')}
       </div>"
       html.html_safe

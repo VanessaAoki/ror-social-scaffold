@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
   end
 
   def new
-    @friendship = Friendship.new(friendship_params)  
+    @friendship = Friendship.new(friendship_params)
   end
 
   def create
@@ -46,7 +46,7 @@ class FriendshipsController < ApplicationController
     end
   end
 
-private
+  private
 
   def friendship_params
     params.require(:friendship).permit(:user_id, :friend_id, :status, :id)
