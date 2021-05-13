@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    member do
+      post 'accept', to: 'friendships#confirm'
+      post 'reject', to: 'friendships#reject'
+    end
+  end
 
   resources :posts, only: [:index, :create] do
     resources :comments, only: [:create]

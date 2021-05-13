@@ -19,11 +19,11 @@ module FriendshipHelper
     elsif current_user.friend_requests.include?(the_other_user)
       html = ''
       html << "<div>
-      #{link_to('Accept', accept_friendship_path(
+      #{link_to('Accept', accept_user_path(
                             Friendship.where(user: the_other_user, friend: current_user).first
                           ),
                 method: :post, class: 'btn btn-success')}
-      #{link_to('Reject', reject_friendship_path(Friendship.where(user: the_other_user,
+      #{link_to('Reject', reject_user_path(Friendship.where(user: the_other_user,
                                                                   friend: current_user).first),
                 method: :post, class: 'btn btn-danger')}
       </div>"

@@ -1,4 +1,4 @@
-class FriendshipController < ApplicationController
+class FriendshipsController < ApplicationController
   before_action :authenticate_user!
 
   def index
@@ -6,11 +6,11 @@ class FriendshipController < ApplicationController
   end
 
   def new
-    @friendship = Friendship.new(friendship_params)
+    @friendship = Friendship.new(friendship_params)  
   end
 
   def create
-    @friendship = Friendships.create!(friendship_params)
+    @friendship = current_user.friendships.new(friendship_params)
 
     if @friendship.save
       redirect_to users_path, notice: 'Friend request sent.'
@@ -46,9 +46,9 @@ class FriendshipController < ApplicationController
     end
   end
 
-  private
+private
 
   def friendship_params
-    params.require(:friendship).permit(:user_id, :friend_id, :confirmed, :id)
+    params.require(:friendship).permit(:user_id, :friend_id, :status, :id)
   end
 end
