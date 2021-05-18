@@ -26,4 +26,3 @@ RSpec.describe 'Create new comment', type: :feature do
     expect(page).to have_content("Content can't be blank")
   end
 end
-
