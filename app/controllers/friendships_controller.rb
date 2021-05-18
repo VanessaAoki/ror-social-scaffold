@@ -13,7 +13,7 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.new(friendship_params)
 
     if @friendship.save
-      redirect_to users_path, notice: 'Friend request sent.'
+      redirect_to root_path, notice: 'Friend request sent.'
     else
       render 'new'
     end

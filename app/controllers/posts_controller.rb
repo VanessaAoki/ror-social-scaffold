@@ -3,11 +3,16 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
+    @sent_invites = Friendship.where(user_id: current_user.id)
+    @received_invites = Friendship.where(friend_id: current_user.id)
+    @blank_friendship = Friendship.new
     timeline_posts
   end
 
   def create
     @post = current_user.posts.new(post_params)
+    @sent_invites = Friendship.where(user_id: current_user.id)
+    @received_invites = Friendship.where(friend_id: current_user.id)
 
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
