@@ -1,54 +1,50 @@
 class FriendshipsController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @friendships = Friendship.all
   end
 
   def new
-    @friendship = Friendship.new(friendship_params)
+    @friendship = Friendship.new
   end
 
   def create
-    @friendship = current_user.friendships.new(friendship_params)
-
+    @friendship = current_user.friendships.build(params_friendship)
     if @friendship.save
-      redirect_to root_path, notice: 'Friend request sent.'
+      flash[:notice] = 'Friendship was saved correctly.'
+      redirect_back(fallback_location: new_user_friendship_path)
     else
-      render 'new'
+      render :create
     end
   end
 
-  def confirm
-    friendship = Friendship.find(params[:id])
-    friendship.status = true
-    friendship.save
-    redirect_to users_path
-  end
-
-  def reject
-    friendship = Friendship.find(params[:id])
-    friendship.status = false
-    user = User.find(friendship.user_id)
-    friend = User.find(friendship.friend_id)
-    Friendship.where(user: user, friend: friend).first.delete
-    friendship.save
-    redirect_to users_path
+  def update
+    friend = User.find(params[:id])
+    friendship = friend.friendships.find_by(friend_id: current_user.id)
+    if current_user.friend_requests.include?(friend)
+      friendship.confirm_friend
+      flash[:notice] = 'Friendship was confirmed correctly.'
+      redirect_back(fallback_location: user_path)
+    else
+      flash[:notice] = 'Friendship was not modified.'
+      render :update
+    end
   end
 
   def destroy
-    friendship = friendship.find_by(id: params[:id], user: current_user, friend_id: params[:user_id])
-    if friendship
-      friendship.destroy
-      redirect_to posts_path, notice: "You are not friends with #{friend.name} anymore."
-    else
-      redirect_to posts_path, alert: 'You cannot disfriendship post that you did not friendship before.'
-    end
+    friend = User.find(params[:id])
+    friendship = friend.friendships.find_by(friend_id: current_user.id)
+
+    flash[:notice] = if friendship.destroy
+                       'Friendship was rejected.'
+                     else
+                       'Some error happened.'
+                     end
+    redirect_back(fallback_location: user_path)
   end
 
   private
 
-  def friendship_params
-    params.require(:friendship).permit(:user_id, :friend_id, :status, :id)
+  def params_friendship
+    params.require(:friendship).permit(:friend_id)
   end
 end

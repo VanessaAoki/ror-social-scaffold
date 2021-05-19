@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @friendship = Friendship.new
     @pending_requests = current_user.pending_friends
     @friend_requests = current_user.friend_requests
   end
@@ -11,5 +12,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.ordered_by_most_recent
     @friend_requests = current_user.friend_requests
+    @friendship = Friendship.new
   end
 end
