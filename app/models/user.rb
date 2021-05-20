@@ -6,35 +6,40 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
 
-  has_many :posts, dependent: :destroy
+  has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :friendships
-  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
-  def friends
-    friends_array = friendships.map { |friendship| friendship.friend if friendship.status }
-    friends_array += inverse_friendships.map { |friendship| friendship.user if friendship.status }
-    friends_array.compact
+  has_many :confirmed_friendships, -> { where status: true }, class_name: 'Friendship'
+  has_many :friends, through: :confirmed_friendships
+
+  # pending_friends
+  has_many :pending_friendships, -> { where status: nil }, class_name: 'Friendship', foreign_key: 'user_id'
+  has_many :pending_friends, through: :pending_friendships, source: :friend
+
+  # friend_requests
+  has_many :inverted_friendships, -> { where status: nil }, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :requests, through: :inverted_friendships, source: :user
+
+  def friends_without_status
+    friends.select(:friend_id)
   end
 
-  # Users who have yet to confirme friend requests
-  def pending_friends
-    friendships.map { |friendship| friendship.friend unless friendship.status }.compact
+  def request?(user_id)
+    friend = requests.where("id = #{user_id}")
+    return false if friend.empty?
+
+    true
   end
 
-  # Users who have requested to be friends
-  def friend_requests
-    inverse_friendships.map { |friendship| friendship.user unless friendship.status }.compact
-  end
+  def friend?(user_id)
+    friend = pending_friends.where("id = #{user_id}")
+    return nil unless friend.empty?
 
-  def confirm_friend(user)
-    friendship = inverse_friendships.find { |_friendship| friendship.user == user }
-    friendship.status = true
-    friendship.save
-  end
+    friend = friends.where("id = #{user_id}")
+    return true unless friend.empty?
 
-  def friend?(user)
-    friends.include?(user)
+    false
   end
 end

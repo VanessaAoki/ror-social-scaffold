@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+gem 'composite_primary_keys'
 # Mimemagic
 gem 'mimemagic', '~> 0.3.7'
 # Use CoffeeScript for .coffee assets and views
@@ -37,7 +38,9 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
+# Better errors
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+# Devise
 gem 'devise'
 
 group :development, :test do

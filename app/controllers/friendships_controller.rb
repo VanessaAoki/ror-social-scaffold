@@ -2,53 +2,27 @@ class FriendshipsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @friendships = Friendship.all
-  end
-
-  def new
-    @friendship = Friendship.new(friendship_params)
+    @friends = current_user.friends
+    @requests = current_user.requests
   end
 
   def create
-    @friendship = current_user.friendships.new(friendship_params)
-
-    if @friendship.save
-      redirect_to users_path, notice: 'Friend request sent.'
-    else
-      render 'new'
-    end
+    @friendship = current_user.friendships.build(friend_id: params[:friend_id])
+    @friendship.save
+    redirect_to user_url(id: params[:friend_id])
   end
 
-  def confirm
-    friendship = Friendship.find(params[:id])
-    friendship.status = true
-    friendship.save
-    redirect_to users_path
-  end
-
-  def reject
-    friendship = Friendship.find(params[:id])
-    friendship.status = false
-    user = User.find(friendship.user_id)
-    friend = User.find(friendship.friend_id)
-    Friendship.where(user: user, friend: friend).first.delete
-    friendship.save
-    redirect_to users_path
+  def update
+    @friendship = current_user.friendships.build(friend_id: params[:id], status: true)
+    @friendship.save
+    @friendship2 = Friendship.find([params[:id].to_i, current_user.id])
+    @friendship2.update(status: true)
+    redirect_to friendships_path
   end
 
   def destroy
-    friendship = friendship.find_by(id: params[:id], user: current_user, friend_id: params[:user_id])
-    if friendship
-      friendship.destroy
-      redirect_to posts_path, notice: "You are not friends with #{friend.name} anymore."
-    else
-      redirect_to posts_path, alert: 'You cannot disfriendship post that you did not friendship before.'
-    end
-  end
-
-  private
-
-  def friendship_params
-    params.require(:friendship).permit(:user_id, :friend_id, :status, :id)
+    @friendship = Friendship.find([params[:id].to_i, current_user.id])
+    @friendship.destroy
+    redirect_to friendships_path
   end
 end
