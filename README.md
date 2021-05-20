@@ -16,7 +16,7 @@
   </a>
 </p>
 
-# Members Only
+# Social Media App
 This is a social media app, created with Ruby on Rails, developed so users can create, commentate, and like posts.
 You can add friends and reject friend requests.
 > In your timeline you should only see your own posts, as well as posts from your friends, so be sure to follow them! 
