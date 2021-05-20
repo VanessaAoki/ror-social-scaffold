@@ -29,7 +29,7 @@ You can add friends and reject friend requests.
 - Visual Studio, Git & GitHub;
 
 ## Live Server Link
-[Live demo link]()
+[Live demo link](https://vanessa-ror-social.herokuapp.com/login)
 
 ## Prerequisites
 To run this project, you need a computer with Ruby and Ruby on Rails installed.
