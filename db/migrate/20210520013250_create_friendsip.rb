@@ -1,7 +1,5 @@
 class CreateFriendsip < ActiveRecord::Migration[6.1]
   def change
-    drop_table :friendships
-
     create_table :friendships, {:id => false} do |t|
       t.references :user, foreign_key: true
       t.references :friend, index: true
