@@ -90,6 +90,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    composite_primary_keys (13.0.0)
+      activerecord (~> 6.1.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     database_cleaner_2 (2.1.0)
@@ -248,6 +250,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.0.0)
@@ -279,6 +283,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   coffee-rails (~> 4.2)
+  composite_primary_keys
   database_cleaner_2 (~> 2.1)
   devise
   jbuilder (~> 2.5)

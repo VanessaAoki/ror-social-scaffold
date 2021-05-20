@@ -1,6 +1,0 @@
-<%= form_for @friendship do |form| %>
-  <%= form.hidden_field :friend_id, value: user.id %>
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  <%= form.hidden_field :confirmed, value: nil %>
-  <%= form.submit 'ADD' %>
-<% end %>
