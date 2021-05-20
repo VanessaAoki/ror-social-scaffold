@@ -1,9 +1,9 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+<div class="space-between">
+  <h2><%= @user.name %></h2>
+  <%= render partial: 'users/friend_btn' %>
+</div>
   <article class="timeline">
-    <h3>Recent posts:</h3>
-    <ul class="posts">
-      <%= render @posts %>
-    </ul>
+    <%= render_posts %>
   </article>
 </section>

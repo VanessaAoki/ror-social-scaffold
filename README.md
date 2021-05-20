@@ -1,93 +1,84 @@
-# Scaffold for social media app with Ruby on Rails
+<p align="center">
+  <a href="https://www.microverse.org/">
+    <img alt="Microverse" src="https://img.shields.io/badge/-Microverse-blueviolet?style=flat-square">
+  </a>
+  <a href="https://github.com/VanessaAoki/ror-social-scaffold/blob/main/LICENSE">
+    <img alt="MIT Licensed" src="https://img.shields.io/github/license/VanessaAoki/ror-social-scaffold?style=flat-square">
+  </a>
+  <a href="https://github.com/VanessaAoki/ror-social-scaffold">
+    <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/VanessaAoki/ror-social-scaffold/development?color=blue&style=flat-square">
+  </a>
+  <a href="https://github.com/VanessaAoki/ror-social-scaffold">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/VanessaAoki/ror-social-scaffold?color=pink&label=%E2%98%85%20stars%20&style=flat-square">
+  </a>
+  <a href="https://github.com/VanessaAoki">
+    <img alt="GitHub followers" src="https://img.shields.io/github/followers/VanessaAoki?color=yellow&logo=github&style=flat-square">
+  </a>
+</p>
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+# Members Only
+This is a social media app, created with Ruby on Rails, developed so users can create, commentate, and like posts.
+You can add friends and reject friend requests.
+> In your timeline you should only see your own posts, as well as posts from your friends, so be sure to follow them! 
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Ruby 2.7.2;
+- Ruby on Rails 6.1.3;
+- Ruby gems: devise, simple-forms, sqlite3, puma, webpacker, rubocop;
+- Visual Studio, Git & GitHub;
 
-## Live Demo
+## Live Server Link
+[Live demo link]()
 
-TBA
+## Prerequisites
+To run this project, you need a computer with Ruby and Ruby on Rails installed.
 
+> If you are uncertain about how to install Ruby, check out this [tutorial](https://www.theodinproject.com/courses/ruby-programming/lessons/installing-ruby-ruby-programming) made by [The Odin Project](https://www.theodinproject.com/about).
+
+> If you are uncertain about how to install Ruby on Rails, check out this [tutorial](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails) made by [The Odin Project](https://www.theodinproject.com/about).
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow these simple steps:
 
-### Prerequisites
-
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
-
-### Setup
-
-Instal gems with:
-
+1. In your terminal, type the following, to clone this repository:
 ```
-bundle install
+git@github.com:VanessaAoki/ror-social-scaffold.git
 ```
 
-Setup database with:
+2. Type  `$ cd ror-social-scaffold` to move to the project folder;
 
-```
-   rails db:create
-   rails db:migrate
-```
+3. Install all required gems by typing `$ bundle install` on the terminal;
 
-### Github Actions
+4. Migrate the database with `$ rails db:migrate`;
 
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
+5. Type `$ cd bin` to move to the bin folder, *you must be on this folder to execute the file*;
 
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
+6. Execute `$ rails server` on the terminal and run `http://localhost:3000` on your browser *(Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari, etc.)*;
 
+7. Explore the app, sign up - or sign in if you are already a user - write, comment and like posts;
 
-### Usage
+8. After you are done, stop running the server by clicking `ctrl + C` on your terminal.
 
-Start server with:
+## Author
 
-```
-    rails server
-```
+👩🏼‍💻 **Vanessa Aoki**
 
-Open `http://localhost:3000/` in your browser.
-
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
-
-## Authors
-
-TBA
+- GitHub: [@VanessaAoki](https://github.com/VanessaAoki)
+- Twitter: [@VanessaSAoki](https://twitter.com/VanessaSAoki)
+- Linkedin: [Vanessa Aoki](https://www.linkedin.com/in/vanessasaoki/)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/microverseinc/ror-social-scaffold/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-TBA
-
 ## 📝 License
 
-TBA
-
+This project is [MIT](./LICENSE) licensed.
