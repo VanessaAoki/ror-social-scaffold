@@ -26,6 +26,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Bulma
 gem 'bulma-rails', '~> 0.9.1'
+# Simple form
+gem 'simple_form', '~> 5.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
