@@ -18,10 +18,10 @@
           <h1 class="title is-4 has-text-white">New Social</h1>
         <% end %>
         <div class="navbar-item">
-          <%= link_to 'Timeline', posts_path, class: ' button is-link' %>
-        </div>
-        <div class="navbar-item">
-          <%= link_to 'All users', users_path, class: ' button is-link' %>
+          <div class="field is-grouped">
+            <%= link_to 'Timeline', posts_path, class: 'button is-link' %>
+            <%= link_to 'All users', users_path, class: 'button is-link' %>
+          </div>
         </div>
         <div class="navbar-burger burger" data-target="navbar">
             <span></span>

@@ -15,4 +15,12 @@ module PostHelper
     end
     out.html_safe
   end
+
+  def no_recent
+    out = ''
+    if @timeline_posts.empty?
+      out << "<h3>LOL</h3>"
+    end
+    out.html_safe
+  end
 end
