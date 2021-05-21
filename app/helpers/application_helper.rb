@@ -7,6 +7,26 @@ module ApplicationHelper
     end
   end
 
+  def user_navbar
+    out = ''
+    if user_signed_in?
+      out += '<p>'
+      out += link_to current_user.name, edit_user_registration_path, class: 'button ml-2 is-link'
+      out += '</p>'
+      out += '<p>'
+      out += link_to 'Logout', destroy_user_session_path, method: :delete, class: 'button ml-2 is-link'
+    else
+      out += '</p>'
+      out += '<p>'
+      out += link_to 'Log In', new_user_session_path, class: 'button is-link'
+      out += '</p>'
+      out += '<p>'
+      out += link_to 'Sign Up', new_user_registration_path, class: 'button is-link'
+      out += '</p>'
+    end
+    out.html_safe
+  end
+
   def like_or_dislike_btn(post)
     like = Like.find_by(post: post, user: current_user)
     if like
