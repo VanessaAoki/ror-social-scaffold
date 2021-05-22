@@ -41,7 +41,10 @@ a:active {
   border-top: 1px solid rgb(107, 107, 107);
 }
 
-footer {border-top: 1px solid rgb(48, 48, 48);}
+footer {
+  border-top: 1px solid rgb(48, 48, 48);
+  bottom: 0;
+}
 
 // MOBILE
 @media only screen and (max-width: 768px) {

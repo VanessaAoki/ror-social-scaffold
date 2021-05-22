@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   def index
@@ -6,6 +7,11 @@ class PostsController < ApplicationController
     timeline_posts
   end
 
+  # GET /posts/new
+  def new
+    @post = current_user.posts.build
+  end
+  
   def create
     @post = current_user.posts.new(post_params)
 
@@ -40,6 +46,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def timeline_posts
     @timeline_posts ||= Post.where(['user_id = ? OR user_id IN (?)', current_user.id,
