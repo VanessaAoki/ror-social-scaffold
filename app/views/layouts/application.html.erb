@@ -7,23 +7,23 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body class="has-background-dark has-text-white">
     <%= render_notice %> 
     <%= render_alert %> 
   <%# HEADER %>
   <header>
-    <nav class="navbar is-link is-light">
+    <nav class="navbar is-pink">
   		<div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-4 has-text-white">New Social</h1>
         <% end %>
         <div class="navbar-item">
           <div class="field is-grouped">
-            <%= link_to 'Timeline', posts_path, class: 'button is-link' %>
-            <%= link_to 'All users', users_path, class: 'button is-link' %>
+            <%= link_to 'Timeline', posts_path, class: 'button is-pink' %>
+            <%= link_to 'All users', users_path, class: 'button is-pink' %>
           </div>
         </div>
-        <div class="navbar-burger burger" data-target="navbar">
+        <div class="navbar-burger burger has-text-white" data-target="navbar">
             <span></span>
             <span></span>
             <span></span>
@@ -44,5 +44,6 @@
     <main class="main">
       <%= yield %>
     </main>
+    <script src="https://kit.fontawesome.com/0348c0adc9.js" crossorigin="anonymous"></script>
   </body>
 </html>

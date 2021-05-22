@@ -3,12 +3,12 @@
     <%= form_for(@post) do |form| %>
       <%= form.text_field :content, id: :post_content, class: 'post-box mt-6 box', placeholder: 'What are you thinking?' %>
       <%= display_errors(@post) %>
-      <%= form.submit 'Save' %>
+      <%= form.submit 'Post', class: 'button is-pink px-6' %>
     <% end %>
   </div>
 
   <article class="timeline is-flex is-flex-direction-column">
-    <h3 class="is-size-3 is-size-4-mobile">
+    <h3 class="is-size-3 is-size-4-mobile mb-2">
       Recent posts
     </h3>
     <ul class="posts">
