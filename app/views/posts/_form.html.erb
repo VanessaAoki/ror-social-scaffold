@@ -1,0 +1,6 @@
+<%= form_for(@post) do |form| %>
+  <%= form.text_field :content, id: :post_content, class: 'post-box box mt-6', placeholder: 'What are you thinking?' %>
+  <%= display_errors(@post) %>
+  <%= form.submit 'Update post', class: 'button is-pink' %>
+  <%= link_to 'Cancel', posts_path, class: "button is-dark" %>
+<% end %>

@@ -27,7 +27,7 @@ module PostHelper
   def post_controls(post)
     out = '<div class="is-flex mb-3">'
     if user_signed_in? && current_user.id == post.user_id
-      # out += link_to 'Edit', edit_post_path(@post), class: 'button is-warning is-outlined mr-2'
+      out += link_to 'Edit', edit_post_path(post), class: 'button is-warning is-outlined mr-2'
       out += button_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' },
                                         class: 'button is-danger is-outlined mr-2'
     out += '</div>'
