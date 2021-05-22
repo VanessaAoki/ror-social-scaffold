@@ -29,7 +29,12 @@ a:active {
   color: white;
 }
 
-.has-text-pink {color: $pink;}
+.is-faded {
+  background-color: #745880;
+  color: white;
+}
+
+.has-text-pink { color: $pink; }
 
 .button {
   border: hidden;
@@ -53,9 +58,9 @@ footer {
     margin-top: 25px;
   }
 
-  .new_post {width: 450px;}
+  .new_post { width: 450px; }
 
-  .post-box {width: 450px;}
+  .post-box { width: 450px; }
 
   .new_comment {
     width: 450px;
