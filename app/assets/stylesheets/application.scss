@@ -36,28 +36,33 @@ a:active {
   font-weight: 700;
 }
 
+.post {
+  padding: 20px 0;
+  border-top: 1px solid rgb(107, 107, 107);
+}
+
+footer {border-top: 1px solid rgb(48, 48, 48);}
+
 // MOBILE
 @media only screen and (max-width: 768px) {
   .timeline {
-    min-width: 350px;
+    width: 450px;
     margin-top: 25px;
   }
 
-  .post-box {
-    min-width: 350px;
-    min-height: 100px;
-  }
+  .new_post {width: 450px;}
+
+  .post-box {width: 450px;}
 
   .new_comment {
-    min-width: 350px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
 
   .form-control {
-    min-width: 270px;
-    min-height: 50px;
+    width: 270px;
   }
 }
 

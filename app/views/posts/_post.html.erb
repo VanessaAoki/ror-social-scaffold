@@ -6,7 +6,7 @@
     <div class="is-flex is-justify-content-space-between">
       <span class='post-date is-size-7 has-text-grey-light'> <%= post.created_at.strftime("%Y/%m/%d") %></span>
       <div class='post-liking'>
-        <button class="button is-pink is-flex is-small has-text-weight-light">
+        <button class="button is-pink is-flex is-small">
           <%= like_or_dislike_btn(post) %>
           <i class="fas fa-thumbs-up ml-2 mr-3 pb-1"></i>
           <%= post.likes.count %>
@@ -22,7 +22,10 @@
     <%= render partial: 'comments/comment', collection: post.comments %>
     <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
       <%= form.text_field :content, id: :comment_content, class: 'form-control box', placeholder: 'Add new Comment' %>
-      <%= form.submit 'Comment', class: 'button is-pink px-6' %>
+      <button class="button is-pink px-6">
+        <%= form.submit 'Comment', class: 'button is-pink ' %>
+        <i class="fas fa-comment is-size-7"></i>
+      </button>
     <% end %>
   </div>
 </li>

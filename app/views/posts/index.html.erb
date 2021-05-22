@@ -1,9 +1,12 @@
 <div class="is-flex is-flex-direction-column is-align-items-center">
-  <div class="index-form">
+  <div class="index-form is-flex-direction-column is-align-items-center">
     <%= form_for(@post) do |form| %>
-      <%= form.text_field :content, id: :post_content, class: 'post-box mt-6 box', placeholder: 'What are you thinking?' %>
+      <%= form.text_field :content, id: :post_content, class: 'post-box box mt-6', placeholder: 'What are you thinking?' %>
       <%= display_errors(@post) %>
-      <%= form.submit 'Post', class: 'button is-pink px-6' %>
+      <button class="button is-pink px-6">
+        <%= form.submit 'Post', class: 'button is-pink' %>
+        <i class="fas fa-paper-plane"></i>
+      </button>
     <% end %>
   </div>
 
