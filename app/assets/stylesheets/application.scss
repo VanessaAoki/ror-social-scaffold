@@ -15,6 +15,7 @@
  */
 
 @import "bulma";
+@import "font-awesome";
 
 $pink: #cc55fc;
 
@@ -26,11 +27,6 @@ a:active {
 
 .is-pink {
   background-color: $pink;
-  color: white;
-}
-
-.is-faded {
-  background-color: #745880;
   color: white;
 }
 

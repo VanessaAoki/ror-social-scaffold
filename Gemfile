@@ -26,6 +26,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Bulma
 gem 'bulma-rails', '~> 0.9.1'
+# Font Awesome for rails
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

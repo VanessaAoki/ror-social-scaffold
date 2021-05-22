@@ -3,8 +3,11 @@
     <div class='post-attribution' >
       <%= link_to post.user.name, user_path(post.user), class: 'post-author has-text-pink has-text-weight-semibold is-size-4' %>
     </div>
-    <div class="is-flex is-justify-content-space-between">
       <span class='post-date is-size-7 has-text-grey-light'> <%= post.created_at.strftime("%Y/%m/%d") %></span>
+    <p class="post-content py-2">
+      <%= post.content %>
+    </p>
+    <div class="is-flex is-justify-content-space-between">
       <div class='post-liking'>
         <button class="button is-pink is-flex is-small">
           <%= like_or_dislike_btn(post) %>
@@ -12,11 +15,8 @@
           <%= post.likes.count %>
         </button>
       </div>
-    </div>
-    <p class="post-content py-2">
-      <%= post.content %>
-    </p>
       <%= post_controls(post) %>
+    </div>
   </div>
 
   <div class='post-comments-section my-4'>
