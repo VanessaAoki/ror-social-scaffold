@@ -46,24 +46,4 @@ module ApplicationHelper
     end
     out.html_safe
   end
-
-  def render_notice
-    out = ''
-    if notice.present?
-      out << "<div class=\"notice\">
-        <p>#{notice}</p>
-      </div>"
-    end
-    out.html_safe
-  end
-
-  def render_alert
-    out = ''
-    if alert.present?
-      out << "<div class=\"alert\">
-                <p>#{alert}</p>
-              </div>"
-    end
-    out.html_safe
-  end
 end

@@ -26,7 +26,7 @@ module PostHelper
     out = '<div class="is-flex mb-3">'
     if user_signed_in? && current_user.id == post.user_id
       out += link_to (fa_icon "edit"), edit_post_path(post), class: 'has-text-pink mr-4'
-      out += link_to (fa_icon "trash"), post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'has-text-pink'
+      out += link_to (fa_icon "trash"), post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'has-text-pink'
       out += '</div>'
     end
     out.html_safe

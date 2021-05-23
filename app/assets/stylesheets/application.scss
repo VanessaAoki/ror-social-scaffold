@@ -38,6 +38,8 @@ a:active {
   color: $pink;
 }
 
+.is-navbar:hover {color: white;}
+
 .has-text-pink { color: $pink; }
 
 .button {
@@ -48,28 +50,30 @@ a:active {
 .box {
   background-color: hsl(0, 0%, 85%);
   margin-bottom: 10px;
+  border: none;
 }
 
 .navbar {border-bottom: 1px solid rgb(107, 107, 107);}
 
 .new_post { 
   display: flex; 
-  align-items: center;
   justify-content: space-between;
 }
 
-.index-form {border-radius: 10px;}
-
-.send {padding: 0;}
-
-.timeline {border-radius: 10px;}
+.index-form { border-radius: 10px; }
 
 .post {
-  padding-top: 20px;
-  border-top: 1px solid rgb(107, 107, 107);
+  border-radius: 10px;
+  padding: 8px 16px 0 16px;
+  background-color: hsl(0, 0%, 29%);
+  margin-bottom: 15px;
 }
 
 .post-comments {border-bottom: 1px solid rgb(107, 107, 107);}
+
+.user-section { width: 100%; }
+
+.space-between { width: 632px; }
 
 footer {
   border-top: 1px solid rgb(48, 48, 48);
@@ -85,7 +89,20 @@ footer {
 
   .new_post { width: 450px; }
 
-  .post-box { width: 400px; }
+  .post-box { 
+    border-radius: 40px;
+    padding-right: 70px;
+  }
+  
+  .send {
+    position: absolute;
+    margin-left: 400px;
+    padding: 0 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  
+  .post-box { width: 450px; }
 
   .new_comment {
     width: 450px;
@@ -101,14 +118,23 @@ footer {
 
 // OTHERS
 @media only screen and (min-width: 768px) {
-  .timeline {
-    min-width: 600px;
-    margin-top: 25px;
+  .post-box {
+    width: 600px;
+    padding-right: 70px;
+    border-radius: 40px;
+  }
+   
+  .send {
+    position: absolute;
+    margin-left: 548px;
+    padding: 0 13px;
+    border-radius: 20px;
+    margin-top: 9px;
   }
 
-  .post-box {
-    min-width: 600px;
-    min-height: 100px;
+  .timeline {
+    width: 632px;
+    margin-top: 15px;
   }
 
   .new_comment {
@@ -122,3 +148,5 @@ footer {
     min-height: 50px;
   }
 }
+
+.box {margin-bottom: 0 !important;}

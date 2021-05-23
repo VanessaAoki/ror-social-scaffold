@@ -23,9 +23,9 @@
     <%= render partial: 'comments/comment', collection: post.comments %>
     <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
       <%= form.text_field :content, id: :comment_content, class: 'form-control box', placeholder: 'Add new Comment' %>
-      <button class="button is-pink px-5">
-        <%= form.submit 'Comment', class: 'button is-pink ' %>
-        <i class="fas fa-comment is-size-7"></i>
+      <button class="button is-pink mt-2">
+        <%= form.submit 'Comment', class: 'button is-pink m-0' %>
+        <i class="fas fa-comment is-size-6 mr-2"></i>
       </button>
     <% end %>
   </div>

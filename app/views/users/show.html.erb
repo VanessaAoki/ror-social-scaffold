@@ -1,8 +1,24 @@
-<section class="user-section">
-<div class="space-between">
-  <h2><%= @user.name %></h2>
-  <%= render partial: 'users/friend_btn' %>
-</div>
+<section class="user-section is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+  <div class="space-between">
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-128x128">
+        <%= image_tag ("/assets/flame-message.png"), class: "img"%>
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content mt-5 ml-2 pt-2">
+        <span class="is-size-4">
+          <%= @user.name %>
+        </span>
+        <br>
+        <span>
+          <%= render partial: 'users/friend_btn' %>
+        </span>
+      </div>
+    </div>
+  </article>
+  </div>
   <article class="timeline">
     <%= render_posts %>
   </article>

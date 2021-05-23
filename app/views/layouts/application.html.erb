@@ -8,8 +8,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="has-text-white">
-    <%= render_notice %> 
-    <%= render_alert %> 
   <%# HEADER %>
   <header>
     <nav class="navbar has-background-grey-darker is-fixed-top">
@@ -44,9 +42,12 @@
   <main class="main">
     <%= yield %>
   </main>
-  <footer class="is-flex is-justify-content-center mt-4">
+  <footer class="is-flex is-flex-direction-column is-align-items-center mt-4">
     <p class="py-4">
       Made with <i class="fas fa-heart has-text-pink"></i> by <a href="https://github.com/VanessaAoki" class="has-text-pink">Vanessa Aoki</a>.
+    </p>
+    <p class="is-size-7 has-text-grey">
+      Illustrations by <a href="https://icons8.com/illustrations/author/5eb2a7bd01d0360019f124e7">Olha Khomich</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
     </p>
   </footer>
     <script src="https://kit.fontawesome.com/0348c0adc9.js" crossorigin="anonymous"></script>
