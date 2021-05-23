@@ -18,7 +18,15 @@ module PostHelper
 
   def no_recent
     out = ''
-    out << '<h3>LOL</h3>' if @timeline_posts.empty?
+    if @timeline_posts.empty?
+      out += "<div class=\"no-post mt-2\">"
+      out += "<p class=\"has-text-centered mb-2\"><b class=\"is-size-4\">Looks like your feed is empty.</b>"
+      out += "<br>Post something or add other"
+      out += "<br>socinetics to get some content.</p>"
+      out += image_tag ("/assets/flame-no-connection.png"), class: "img", width: 300   
+      out += "</div>"
+
+    end
     out.html_safe
   end
 

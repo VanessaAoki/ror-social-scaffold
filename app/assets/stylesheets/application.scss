@@ -17,7 +17,7 @@
 @import "bulma";
 @import "font-awesome";
 
-$pink: #6ac9ee;
+$pink: #2bc3ff;
 $darkergrey: hsl(0, 0%, 21%);
 
 body {margin-top: 70px;}
@@ -61,6 +61,12 @@ a:active {
 }
 
 .index-form { border-radius: 10px; }
+
+.no-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .post {
   border-radius: 10px;
