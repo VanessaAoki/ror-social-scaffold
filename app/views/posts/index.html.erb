@@ -1,16 +1,16 @@
 <div class="is-flex is-flex-direction-column is-align-items-center">
-  <div class="index-form is-flex-direction-column is-align-items-center">
+  <div class="index-form has-background-grey-dark p-4">
     <%= form_for(@post) do |form| %>
-      <%= form.text_field :content, id: :post_content, class: 'post-box box mt-6', placeholder: 'What are you thinking?' %>
-      <%= display_errors(@post) %>
-      <button class="button is-pink px-6">
-        <%= form.submit 'Post', class: 'button is-pink' %>
+      <%= form.text_field :content, id: :post_content, class: 'post-box box', placeholder: 'What are you thinking?' %>
+      <span class="is-size-7"><%= display_errors(@post) %></span>
+      <button class="send button is-pink">
+        <%= form.submit class: 'is-hidden' %>
         <i class="fas fa-paper-plane"></i>
       </button>
     <% end %>
   </div>
 
-  <article class="timeline is-flex is-flex-direction-column">
+  <article class="timeline is-flex is-flex-direction-column has-background-grey-dark p-4">
     <h3 class="is-size-3 is-size-4-mobile mb-2">
       Recent posts
     </h3>

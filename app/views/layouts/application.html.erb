@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="has-background-dark">
+<html class="has-background-black-ter">
   <head>
     <title>Socinetic</title>
     <%= csrf_meta_tags %>
@@ -7,23 +7,23 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="has-background-dark has-text-white pt-5">
+  <body class="has-text-white">
     <%= render_notice %> 
     <%= render_alert %> 
   <%# HEADER %>
   <header>
-    <nav class="navbar is-pink is-fixed-top">
+    <nav class="navbar has-background-grey-darker is-fixed-top">
   		<div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-4 has-text-white">Socinetic</h1>
+          <h1 class="title is-4 has-text-pink">Socinetic</h1>
         <% end %>
         <div class="navbar-item">
           <div class="field is-grouped">
-            <%= link_to 'Timeline', posts_path, class: 'button is-pink' %>
-            <%= link_to 'All socinetics', users_path, class: 'button is-pink' %>
+            <%= link_to 'Timeline', posts_path, class: 'button is-navbar' %>
+            <%= link_to 'All socinetics', users_path, class: 'button is-navbar' %>
           </div>
         </div>
-        <div class="navbar-burger burger has-text-white" data-target="navbar">
+        <div class="navbar-burger burger has-text-pink" data-target="navbar">
             <span></span>
             <span></span>
             <span></span>
@@ -44,7 +44,7 @@
   <main class="main">
     <%= yield %>
   </main>
-  <footer class="is-flex is-justify-content-center mt-6">
+  <footer class="is-flex is-justify-content-center mt-4">
     <p class="py-4">
       Made with <i class="fas fa-heart has-text-pink"></i> by <a href="https://github.com/VanessaAoki" class="has-text-pink">Vanessa Aoki</a>.
     </p>
