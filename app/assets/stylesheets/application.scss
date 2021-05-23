@@ -79,6 +79,13 @@ a:active {
 
 .user-section { width: 100%; }
 
+.single-user  {
+  border-radius: 10px;
+  padding: 16px;
+  background-color: hsl(0, 0%, 29%);
+  width: 250px;
+}
+
 footer {
   border-top: 1px solid rgb(48, 48, 48);
   bottom: 0;

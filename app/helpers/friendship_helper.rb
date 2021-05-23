@@ -10,11 +10,11 @@ module FriendshipHelper
       out << if current_user.request?(id || params[:id])
                accept_decline(id || params[:id])
              elsif friend == false
-               link_to('Add Friend', friendships_url(friend_id: (id || params[:id])), method: :post, class: 'btn')
+               link_to('Add Friend', friendships_url(friend_id: (id || params[:id])), method: :post, class: 'button is-pink mt-3')
              elsif friend.nil?
                'Pending'
              else
-              link_to "Destroy", friendship_path(current_user.friendships.find_by_friend_id(friend)), :method => :delete
+              link_to "Destroy", friendship_path(current_user.friendships.find_by_friend_id(friend)), :method => :delete, class: 'button is-pink'
              end
     end
     out.html_safe
@@ -32,8 +32,8 @@ module FriendshipHelper
   def accept_decline(user_id)
     out = ''
     out << "<div>
-              #{link_to('Accept', friendship_url(id: user_id), method: :patch, class: 'btn')}
-              #{link_to('Decline', friendship_url(id: user_id), method: :delete, class: 'btn decline')}
+              #{link_to('Accept', friendship_url(id: user_id), method: :patch, class: 'button is-pink')}
+              #{link_to('Decline', friendship_url(id: user_id), method: :delete, class: 'button is-pink')}
           </div>"
     out.html_safe
   end
@@ -62,12 +62,12 @@ module FriendshipHelper
 
   def render_all_users
     out = ''
-    out << '<ul class="users-list">'
+    out << '<ul class="users-list is-flex is-justify-content-space-between">'
     @users.each do |user|
       next unless user.id != current_user.id
 
-      out << "<li class=\"space-between\">
-                <strong>#{link_to user.name, user_path(id: user.id)}</strong>
+      out << "<li class=\"single-user\">
+                <strong>#{link_to user.name, user_path(id: user.id), class:'has-text-pink is-size-5'}</strong>
                 <div>#{follow_btn(user.id, true)}</div>
               </li>"
     end
