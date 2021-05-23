@@ -10,11 +10,11 @@ module FriendshipHelper
       out << if current_user.request?(id || params[:id])
                accept_decline(id || params[:id])
              elsif friend == false
-               link_to('Follow', friendships_url(friend_id: (id || params[:id])), method: :post, class: 'btn')
+               link_to('Add Friend', friendships_url(friend_id: (id || params[:id])), method: :post, class: 'btn')
              elsif friend.nil?
                'Pending'
              else
-               'Friends'
+              link_to "Destroy", friendship_path(current_user.friendships.find_by_friend_id(friend)), :method => :delete
              end
     end
     out.html_safe

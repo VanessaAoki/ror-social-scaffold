@@ -8,7 +8,7 @@ module PostHelper
   def render_posts
     out = ''
     if current_user.friend? params[:id]
-      out << "<h3>Recent posts:</h3>
+      out << "<h3 class=\"ml-4 has-text-pink has-text-weight-semibold\">Latest posts:</h3>
               <ul class=\"posts\">
                 #{render @posts}
               </ul>"

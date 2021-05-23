@@ -2,13 +2,11 @@
   <div class="space-between">
   <article class="media">
     <figure class="media-left">
-      <p class="image is-128x128">
-        <%= image_tag ("/assets/flame-message.png"), class: "img"%>
-      </p>
+        <%= image_tag ("/assets/flame-message.png"), class: "img", width: "200" %>
     </figure>
     <div class="media-content">
       <div class="content mt-5 ml-2 pt-2">
-        <span class="is-size-4">
+        <span class="is-size-4 has-text-pink has-text-weight-semibold">
           <%= @user.name %>
         </span>
         <br>
