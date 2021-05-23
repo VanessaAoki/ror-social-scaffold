@@ -17,7 +17,7 @@
 @import "bulma";
 @import "font-awesome";
 
-$pink: #2bc3ff;
+$pink: #00ACDC;
 $darkergrey: hsl(0, 0%, 21%);
 
 body {margin-top: 70px;}
@@ -86,6 +86,8 @@ a:active {
   width: 250px;
 }
 
+.img-signin {max-height: 400px;}
+
 footer {
   border-top: 1px solid rgb(48, 48, 48);
   bottom: 0;
@@ -127,6 +129,43 @@ footer {
   }
 
   .space-between { width: 482px; }
+
+  .sign-in-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .sign-in-box {
+    border-radius: 25px;
+    padding: 30px 10px;
+  }
+
+  .sign-in {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-in > div > a {color: $pink}
+
+  .sign-in-button {width: 194px;}
+
+  .sign-in-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .sign-in-image > h1 {
+    position: absolute;
+    margin-bottom: 267px;
+    margin-left: 30px;
+    letter-spacing: 3px;
+  }
 }
 
 // OTHERS
@@ -162,6 +201,37 @@ footer {
   }
 
   .space-between { width: 632px; }
+
+  .sign-in-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-in-box {
+    border-radius: 25px;
+    margin-left: 25px;
+    padding: 10px;
+  }
+
+  .sign-in {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-in > div > a {color: $pink}
+
+  .sign-in-button {width: 194px;}
+
+  .img-signin {height: 400px;}
+
+  .sign-in-image > h1 {
+    position: absolute;
+    margin-top: 100px;
+    margin-right: 60px;
+    letter-spacing: 3px;
+  }
 }
 
 .box {margin-bottom: 0 !important;}
