@@ -17,10 +17,10 @@
 @import "bulma";
 @import "font-awesome";
 
-$pink: #00ACDC;
+$pink: #00acdc;
 $darkergrey: hsl(0, 0%, 21%);
 
-body {margin-top: 70px;}
+body { margin-top: 70px; }
 
 a,
 a:active {
@@ -38,7 +38,7 @@ a:active {
   color: $pink;
 }
 
-.is-navbar:hover {color: white;}
+.is-navbar:hover { color: white; }
 
 .has-text-pink { color: $pink; }
 
@@ -47,16 +47,10 @@ a:active {
   font-weight: 700;
 }
 
-.box {
-  background-color: hsl(0, 0%, 85%);
-  margin-bottom: 10px;
-  border: none;
-}
+.navbar { border-bottom: 1px solid rgb(107, 107, 107); }
 
-.navbar {border-bottom: 1px solid rgb(107, 107, 107);}
-
-.new_post { 
-  display: flex; 
+.new_post {
+  display: flex;
   justify-content: space-between;
 }
 
@@ -69,7 +63,7 @@ form > div > input {
   border-radius: 5px;
 }
 
-form > .field {width: 250px;}
+form > .field { width: 250px; }
 
 .index-form { border-radius: 10px; }
 
@@ -86,18 +80,18 @@ form > .field {width: 250px;}
   margin-bottom: 15px;
 }
 
-.post-comments {border-bottom: 1px solid rgb(107, 107, 107);}
+.post-comments { border-bottom: 1px solid rgb(107, 107, 107); }
 
 .user-section { width: 100%; }
 
-.single-user  {
+.single-user {
   border-radius: 10px;
   padding: 16px;
   background-color: hsl(0, 0%, 29%);
   width: 250px;
 }
 
-.img-signin {max-height: 400px;}
+.img-signin { max-height: 400px; }
 
 footer {
   border-top: 1px solid rgb(48, 48, 48);
@@ -113,11 +107,12 @@ footer {
 
   .new_post { width: 450px; }
 
-  .post-box { 
+  .post-box {
     border-radius: 40px;
     padding-right: 70px;
+    width: 450px;
   }
-  
+
   .send {
     position: absolute;
     margin-left: 400px;
@@ -125,8 +120,6 @@ footer {
     border-radius: 20px;
     margin-top: 10px;
   }
-  
-  .post-box { width: 450px; }
 
   .new_comment {
     width: 450px;
@@ -161,9 +154,9 @@ footer {
     align-items: center;
   }
 
-  .sign-in > div > a {color: $pink}
+  .sign-in > div > a { color: $pink; }
 
-  .sign-in-button {width: 250px;}
+  .sign-in-button { width: 250px; }
 
   .sign-in-image {
     display: flex;
@@ -193,9 +186,9 @@ footer {
     align-items: center;
   }
 
-  .sign-up > div > a {color: $pink}
+  .sign-up > div > a { color: $pink; }
 
-  .sign-up-button {width: 250px;}
+  .sign-up-button { width: 250px; }
 
   .sign-up-image {
     display: flex;
@@ -209,9 +202,9 @@ footer {
     position: absolute;
     letter-spacing: 3px;
   }
-  
-  .update-button, 
-  .cancel-update-button {width: 120px;}
+
+  .update-button,
+  .cancel-update-button { width: 120px; }
 }
 
 // OTHERS
@@ -221,7 +214,7 @@ footer {
     padding-right: 70px;
     border-radius: 40px;
   }
-   
+
   .send {
     position: absolute;
     margin-left: 548px;
@@ -266,11 +259,11 @@ footer {
     align-items: center;
   }
 
-  .sign-in > div > a {color: $pink}
+  .sign-in > div > a { color: $pink; }
 
-  .sign-in-button {width: 250px;}
+  .sign-in-button { width: 250px; }
 
-  .img-signin {height: 400px;}
+  .img-signin { height: 400px; }
 
   .sign-in-image > h1 {
     position: absolute;
@@ -297,12 +290,12 @@ footer {
     align-items: center;
   }
 
-  .sign-up > div > a {color: $pink}
+  .sign-up > div > a { color: $pink; }
 
-  .sign-up-button {width: 250px;}
+  .sign-up-button { width: 250px; }
 
-  .sign-up-image {margin-top: 25px;}
-  
+  .sign-up-image { margin-top: 25px; }
+
   .sign-up-image > h1 {
     position: absolute;
     letter-spacing: 3px;
@@ -310,13 +303,17 @@ footer {
     margin-left: 25px;
   }
 
-  .update-button, 
-  .cancel-update-button {width: 120px;}
+  .update-button,
+  .cancel-update-button { width: 120px; }
 }
 
-.box {margin-bottom: 0 !important;}
+.box {
+  background-color: hsl(0, 0%, 85%);
+  margin-bottom: 0 !important;
+  border: none;
+}
 
-#user_remember_me { 
+#user_remember_me {
   height: 10px;
   width: 10px;
 }

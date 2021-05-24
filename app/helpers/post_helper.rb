@@ -19,12 +19,12 @@ module PostHelper
   def no_recent
     out = ''
     if @timeline_posts.empty?
-      out += "<div class=\"no-post mt-2\">"
-      out += "<p class=\"has-text-centered mb-2\"><b class=\"is-size-4\">Looks like your feed is empty.</b>"
-      out += "<br>Post something or add other"
-      out += "<br>socinetics to get some content.</p>"
-      out += image_tag ("/assets/flame-no-connection.png"), class: "img", width: 300   
-      out += "</div>"
+      out += '<div class="no-post mt-2">'
+      out += '<p class="has-text-centered mb-2"><b class="is-size-4">Looks like your feed is empty.</b>'
+      out += '<br>Post something or add other'
+      out += '<br>socinetics to get some content.</p>'
+      out += image_tag '/assets/flame-no-connection.png', class: 'img', width: 300
+      out += '</div>'
 
     end
     out.html_safe
@@ -33,8 +33,9 @@ module PostHelper
   def post_controls(post)
     out = '<div class="is-flex mb-3">'
     if user_signed_in? && current_user.id == post.user_id
-      out += link_to (fa_icon "edit"), edit_post_path(post), class: 'has-text-pink mr-4'
-      out += link_to (fa_icon "trash"), post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: 'has-text-pink'
+      out += link_to (fa_icon 'edit'), edit_post_path(post), class: 'has-text-pink mr-4'
+      out += link_to (fa_icon 'trash'), post, method: :delete,
+                                              data: { confirm: 'Are you sure?' }, class: 'has-text-pink'
       out += '</div>'
     end
     out.html_safe
