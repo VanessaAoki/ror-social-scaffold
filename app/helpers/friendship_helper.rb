@@ -32,8 +32,8 @@ module FriendshipHelper
   def accept_decline(user_id)
     out = ''
     out << "<div>
-              #{link_to('Accept', friendship_url(id: user_id), method: :patch, class: 'button is-pink')}
-              #{link_to('Decline', friendship_url(id: user_id), method: :delete, class: 'button is-pink')}
+              #{link_to('Accept', friendship_url(id: user_id), method: :patch, class: 'button is-pink mt-3 px-5')}
+              #{link_to('Decline', friendship_url(id: user_id), method: :delete, class: 'button is-danger ml-3 mt-3 px-5')}
           </div>"
     out.html_safe
   end
@@ -62,11 +62,11 @@ module FriendshipHelper
 
   def render_all_users
     out = ''
-    out << '<ul class="users-list is-flex is-justify-content-space-between">'
+    out << '<ul class="users-list is-flex">'
     @users.each do |user|
       next unless user.id != current_user.id
 
-      out << "<li class=\"single-user\">
+      out << "<li class=\"single-user mr-3\">
                 <strong>#{link_to user.name, user_path(id: user.id), class:'has-text-pink is-size-5'}</strong>
                 <div>#{follow_btn(user.id, true)}</div>
               </li>"
