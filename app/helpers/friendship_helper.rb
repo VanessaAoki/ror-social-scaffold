@@ -8,13 +8,13 @@ module FriendshipHelper
     friend = current_user.friend?(id || params[:id])
     if is_me || @is_me
       out << if current_user.request?(id || params[:id])
-               accept_decline(id || params[:id])
+                accept_decline(id || params[:id])
              elsif friend == false
                link_to('Add Friend', friendships_url(friend_id: (id || params[:id])), method: :post, class: 'button is-pink mt-3')
              elsif friend.nil?
-               'Pending'
+               "<button class=\"button is-info mt-3\" title=\"Disabled button\" disabled>Pending</button>"
              else
-              link_to "Destroy", friendship_path(current_user.friendships.find_by_friend_id(friend)), :method => :delete, class: 'button is-pink'
+              link_to "Destroy", friendship_path(current_user.friendships.find_by_friend_id(@users.ids)), :method => :delete, class: 'button is-pink mt-3'
              end
     end
     out.html_safe

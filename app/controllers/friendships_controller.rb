@@ -25,5 +25,5 @@ class FriendshipsController < ApplicationController
     @friendship.destroy
     flash[:notice] = "Successfully destroyed friendship."
     redirect_to root_url
-  end
+  end  
 end
