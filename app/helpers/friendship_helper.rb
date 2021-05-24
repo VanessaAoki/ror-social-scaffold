@@ -24,7 +24,7 @@ module FriendshipHelper
     out = ''
     @friends.each do |f|
       puts f
-      out << "<li>#{f.name} #{current_user.friend?(f.id).nil? ? ', pending' : ''}<li>"
+      out << "<li>#{link_to f.name, user_path(id: f.id), class:'has-text-pink is-size-5'} #{current_user.friend?(f.id).nil? ? ', pending' : ''}<li>"
     end
     out.html_safe
   end
@@ -41,8 +41,8 @@ module FriendshipHelper
   def list_requests
     out = ''
     @requests.each do |f|
-      out << "<li class=\"for-btn\">
-                <strong>#{f.name}</strong>
+      out << "<li class=\"single-user mr-3\">
+                <strong class=\"has-text-white\">#{link_to f.name, user_path(id: f.id), class:'has-text-pink is-size-5'}</strong>
                 #{accept_decline(f.id)}
             </li>"
     end
@@ -51,11 +51,12 @@ module FriendshipHelper
 
   def render_requests
     out = ''
-    unless @requests.empty?
-      out << "<h1>Friend requests</h1>
-                    <ul>
-                        #{list_requests}
-                    </ul>"
+    if @requests.empty? == false
+      out << "<ul>
+                #{list_requests}
+              </ul>"
+    else
+      out << "<p>You don't have any pending requests!</p>"
     end
     out.html_safe
   end
