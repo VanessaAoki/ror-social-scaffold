@@ -1,6 +1,6 @@
-<div class="post-comments">
+<div class="post-comments ml-6 mb-4">
   <p>
-    <b><%= comment.user.name %>:</b> <%= comment.content %>
+    <b class="has-text-pink"><%= comment.user.name %>:</b> <%= comment.content %>
   </p>
-  <span> <%= comment.created_at.strftime("%Y/%m/%d") %> </span>
+  <span class='is-size-7 has-text-grey-light'> <%= comment.created_at.strftime("%Y/%m/%d") %> </span>
 </div>

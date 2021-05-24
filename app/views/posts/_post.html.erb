@@ -1,23 +1,32 @@
-<li class="post">
+<li class="post is-flex is-flex-direction-column">
   <div>
     <div class='post-attribution' >
-      <%= link_to post.user.name, user_path(post.user), class: 'post-author' %>
+      <%= link_to post.user.name, user_path(post.user), class: 'post-author has-text-pink has-text-weight-semibold is-size-4' %>
     </div>
-    <div class='post-liking'>
-      <span class='post-date'> <%= post.created_at.strftime("%Y/%m/%d") %> </span>
-      <%= like_or_dislike_btn(post) %>
-      <%= post.likes.count %>
+      <span class='post-date is-size-7 has-text-grey-light'> <%= post.created_at.strftime("%Y/%m/%d") %></span>
+    <p class="post-content py-2">
+      <%= post.content %>
+    </p>
+    <div class="is-flex is-justify-content-space-between">
+      <div class='post-liking'>
+        <button class="button is-pink is-flex is-small">
+          <%= like_or_dislike_btn(post) %>
+          <i class="fas fa-thumbs-up ml-2 mr-3 pb-1"></i>
+          <%= post.likes.count %>
+        </button>
+      </div>
+      <%= post_controls(post) %>
     </div>
   </div>
-  <p class="post-content">
-    <%= post.content %>
-  </p>
 
-  <div class='post-comments-section'>
+  <div class='post-comments-section my-4'>
     <%= render partial: 'comments/comment', collection: post.comments %>
     <%= form_for(post.comments.new, url: post_comments_path(post)) do |form| %>
-      <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
-      <%= form.submit 'Comment' %>
+      <%= form.text_field :content, id: :comment_content, class: 'form-control box', placeholder: 'Add new Comment' %>
+      <button class="button is-pink mt-2">
+        <%= form.submit 'Comment', class: 'button is-pink m-0' %>
+        <i class="fas fa-comment is-size-6 mr-2"></i>
+      </button>
     <% end %>
   </div>
 </li>

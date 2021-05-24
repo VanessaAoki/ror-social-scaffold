@@ -1,42 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html class="has-background-black-ter">
   <head>
-    <title>RorSocialScaffold</title>
+    <title>Socinetic</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <nav class="nav">
-      <%= link_to 'Stay in touch', root_path %>
-      <div class="menu">
-        <div class="menu-item">
-          <%= menu_link_to 'Timeline', posts_path %>
+  <body class="has-text-white">
+  <%# HEADER %>
+  <header>
+    <nav class="navbar has-background-grey-darker is-fixed-top">
+  		<div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1 class="title is-4 has-text-pink">Socinetic</h1>
+        <% end %>
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <%= link_to 'All socinetics', users_path, class: 'button is-navbar' %>
+            <%= link_to 'Your friends', friendships_path, class: 'button is-navbar' %>
+          </div>
         </div>
-        <div class="menu-item">
-          <%= menu_link_to 'All users', users_path %>
+        <div class="navbar-burger burger has-text-pink" data-target="navbar">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
-      <% if current_user %>
-        <%= link_to current_user.name, edit_user_registration_path %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign in', user_session_path %>
-      <% end %>
-    </nav>
-    <% if notice.present? %>
-      <div class="notice">
-        <p> <%= notice %> </p>
-      </div>
-    <% end %>
-    <% if alert.present? %>
-      <div class="alert">
-        <p> <%= alert %> </p>
-      </div>
-    <% end %>
-    <main class="main">
-      <%= yield %>
-    </main>
+  	  </div>
+
+			<div id="navbar" class="navbar-menu">
+				<div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <%= user_navbar %>
+            </div>
+					</div>
+				</div>
+			</div>
+  	</nav>
+  </header>   
+  <main class="main">
+    <%= yield %>
+  </main>
+  <footer class="is-flex is-flex-direction-column is-align-items-center mt-4">
+    <p class="py-4">
+      Made with <i class="fas fa-heart has-text-pink px-1"></i> by <a href="https://github.com/VanessaAoki" class="has-text-pink">Vanessa Aoki</a>.
+    </p>
+    <p class="is-size-7 has-text-grey">
+      Illustrations from <a href="https://icons8.com/illustrations">Ouch!</a>
+    </p>
+  </footer>
+    <script src="https://kit.fontawesome.com/0348c0adc9.js" crossorigin="anonymous"></script>
   </body>
 </html>
