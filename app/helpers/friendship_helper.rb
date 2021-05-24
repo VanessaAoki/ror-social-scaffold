@@ -14,7 +14,7 @@ module FriendshipHelper
              elsif friend.nil?
                "<button class=\"button is-info mt-3\" title=\"Disabled button\" disabled>Pending</button>"
              else
-              link_to "Destroy", friendship_path(current_user.friendships.find_by_friend_id(@users.ids)), :method => :delete, class: 'button is-pink mt-3'
+              link_to "Unfriend", friendship_path(current_user.friendships.find_by_friend_id(@users.ids)), :method => :delete, class: 'button is-pink mt-3'
              end
     end
     out.html_safe
