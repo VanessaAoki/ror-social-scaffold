@@ -60,6 +60,17 @@ a:active {
   justify-content: space-between;
 }
 
+form > div > input {
+  width: 250px;
+  height: 35px;
+  padding: 2px 5px;
+  background-color: hsl(0, 0%, 89%);
+  border: 0;
+  border-radius: 5px;
+}
+
+form > .field {width: 250px;}
+
 .index-form { border-radius: 10px; }
 
 .no-post {
@@ -137,9 +148,10 @@ footer {
     align-items: center;
   }
 
-  .sign-in-box {
+  .sign-in-box,
+  .sign-up-box {
     border-radius: 25px;
-    padding: 30px 10px;
+    padding: 30px 30px;
   }
 
   .sign-in {
@@ -151,7 +163,7 @@ footer {
 
   .sign-in > div > a {color: $pink}
 
-  .sign-in-button {width: 194px;}
+  .sign-in-button {width: 250px;}
 
   .sign-in-image {
     display: flex;
@@ -166,6 +178,40 @@ footer {
     margin-left: 30px;
     letter-spacing: 3px;
   }
+
+  .sign-up-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-up {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-up > div > a {color: $pink}
+
+  .sign-up-button {width: 250px;}
+
+  .sign-up-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .sign-up-image > h1 {
+    margin-top: -55px;
+    position: absolute;
+    letter-spacing: 3px;
+  }
+  
+  .update-button, 
+  .cancel-update-button {width: 120px;}
 }
 
 // OTHERS
@@ -210,11 +256,11 @@ footer {
   .sign-in-box {
     border-radius: 25px;
     margin-left: 25px;
-    padding: 10px;
+    padding: 10px 30px;
   }
 
   .sign-in {
-    width: 250px;
+    width: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -222,7 +268,7 @@ footer {
 
   .sign-in > div > a {color: $pink}
 
-  .sign-in-button {width: 194px;}
+  .sign-in-button {width: 250px;}
 
   .img-signin {height: 400px;}
 
@@ -232,6 +278,45 @@ footer {
     margin-right: 60px;
     letter-spacing: 3px;
   }
+
+  .sign-up-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-up-box {
+    border-radius: 25px;
+    margin-right: 25px;
+    padding: 10px 30px;
+  }
+
+  .sign-up {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-up > div > a {color: $pink}
+
+  .sign-up-button {width: 250px;}
+
+  .sign-up-image {margin-top: 25px;}
+  
+  .sign-up-image > h1 {
+    position: absolute;
+    letter-spacing: 3px;
+    margin-top: -55px;
+    margin-left: 25px;
+  }
+
+  .update-button, 
+  .cancel-update-button {width: 120px;}
 }
 
 .box {margin-bottom: 0 !important;}
+
+#user_remember_me { 
+  height: 10px;
+  width: 10px;
+}
