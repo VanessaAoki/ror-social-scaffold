@@ -1,16 +1,14 @@
 <section class="users-section columns is-mobile mt-1 pb-6">
   <div class="columns column is-10 is-offset-1">
-    <div class="column is-5 all-friends">
-      <h1 class="is-size-4 has-text-weight-bold my-4">All your friends</h1>
+    <div class="column is-3 all-friends">
+      <h1 class="is-size-4 has-text-weight-bold my-4">All friends</h1>
       <ul class="is-flex">
         <%= list_friends %>
       </ul>
     </div>
-    <div class="column is-5 friends-request">
+    <div class="column is-9 friends-request">
       <h1 class="is-size-4 has-text-weight-bold my-4">Pending friend requests</h1>
-      <div class="is-flex">
         <%= render_requests %>
-      </div>
     </div>
   </div>
 </section>

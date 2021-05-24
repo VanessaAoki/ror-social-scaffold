@@ -41,7 +41,7 @@ module FriendshipHelper
   def list_requests
     out = ''
     @requests.each do |f|
-      out << "<li class=\"single-user mr-3\">
+      out << "<li class=\"single-user mr-3 mb-3\">
                 <strong class=\"has-text-white\">#{link_to f.name, user_path(id: f.id), class:'has-text-pink is-size-5'}</strong>
                 #{accept_decline(f.id)}
             </li>"
@@ -52,7 +52,7 @@ module FriendshipHelper
   def render_requests
     out = ''
     if @requests.empty? == false
-      out << "<ul>
+      out << "<ul class=\"is-flex\">
                 #{list_requests}
               </ul>"
     else
@@ -63,7 +63,7 @@ module FriendshipHelper
 
   def render_all_users
     out = ''
-    out << '<ul class="users-list is-flex">'
+    out << "<ul class=\"users-list is-flex\">"
     @users.each do |user|
       next unless user.id != current_user.id
 
